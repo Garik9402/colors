@@ -36,7 +36,7 @@ const path = {
     base: "src/",
     html: "src/*.html",
     scss: "src/scss/styles.scss",
-    js: "src/js/script.js",
+    js: "src/js/**/*.*",
     img: "src/images/**/*.{jpg,svg,png,jpeg,gif}",
     fonts: "src/fonts/**/*.*",
   },

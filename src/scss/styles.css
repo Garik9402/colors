@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* inter-300 - latin_cyrillic */
 @font-face {
   font-family: "Inter";
@@ -232,4 +233,34 @@
   line-height: 88%;
   letter-spacing: -0.02em;
   color: #FFFFFF;
+}
+
+.slider {
+  width: 472px;
+  display: flex;
+  /* Слайдер запущен */
+  /* Слайдер с точками */
+  /* Лента слайдов */
+  /* Слайд */
+  /* Слайд активный (показывается) */
+  /* Слайд основной */
+  /* Слайд по центру */
+  /* Клонированный слайд */
+}
+.slider .slick-list {
+  overflow: hidden;
+}
+.slider .slick-track {
+  display: flex;
+}
+/* Стрелка */
+.slick-arrow {
+  /* Стрелка влево */
+  /* Стрелка вправо */
+  /* Стрелка не активная */
+  /* Точки (булиты) */
+}
+.slick-dots {
+  /* Активная точка */
+  /* Элемент точки */
 }/*# sourceMappingURL=styles.css.map */
