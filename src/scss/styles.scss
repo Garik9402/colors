@@ -1,0 +1,244 @@
+@import "fonts.scss";
+@import "mixin.scss";
+@import "reset.scss";
+
+.wrapper-content {}
+
+.header {
+   width: 100%;
+   padding: 36px 0px;
+
+   &__inner {
+      max-width: 1680px;
+      width: 100%;
+      padding: 0 15px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__items-left-w {
+      max-width: 845px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__logo-link {
+      height: 26px;
+   }
+
+   &__menu {}
+
+   &__nav {}
+
+   &__nav-list {
+      display: flex;
+      list-style: none;
+   }
+
+   &__nav-list-item {
+      margin: 0px 12px;
+   }
+
+   &__nav-item-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #1F2020;
+      text-decoration: none;
+
+      &:hover {
+         color: blue;
+         transition: all 0.3s ease;
+      }
+
+   }
+
+   &__contacts {
+      display: flex;
+      align-items: center;
+   }
+
+   &__phone-w {
+      display: flex;
+      flex-direction: column;
+      margin-right: 118px;
+   }
+
+   &__phone {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      color: #1F2020;
+      text-decoration: none;
+   }
+
+   &__callback {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      color: #1F2020;
+      opacity: 0.3;
+      text-decoration: none;
+   }
+
+   &__user-items {
+      display: flex;
+      align-items: center;
+      height: 22px;
+   }
+
+   &__icon {
+      margin-right: 26px;
+      width: 22px;
+      height: 22px;
+   }
+
+   &__search {}
+
+   &__user {}
+
+   &__heart {}
+
+   &__basket {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: #7BB899;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+   }
+
+   &__basket-count {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #1F2020;
+
+
+   }
+}
+
+.logo {
+   &:hover circle {
+      fill: #7BB899;
+      transition: all 0.3s ease;
+   }
+
+   &:hover path {
+      fill: #7BB899;
+      transition: all 0.3s ease;
+   }
+}
+
+.description {
+   width: 100%;
+   min-height: 560px;
+   background: url(../images/description-back.png) no-repeat;
+   background-size: cover;
+   background-position: 20%;
+   padding: 32px 0px 39px 0px;
+
+   &__inner {
+      max-width: 1680px;
+      width: 100%;
+      padding: 0 15px;
+      margin: 0 auto;
+   }
+
+   &__header {
+      width: 100%;
+      margin-bottom: 175px;
+   }
+
+   &__menu {}
+
+   &__nav {}
+
+   &__nav-list {
+      display: flex;
+      list-style: none;
+   }
+
+   &__nav-list-item {
+      position: relative;
+      margin-right: 19px;
+
+      &:not(:first-child)::before {
+         content: '';
+         position: absolute;
+         width: 3px;
+         height: 3px;
+         background: #C4C4C4;
+         border-radius: 50%;
+         opacity: 0.3;
+         left: -11px;
+         top: 50%;
+      }
+   }
+
+   &__nav-item-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 100%;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      opacity: 0.3;
+      text-decoration: none;
+
+
+   }
+
+   &__title {
+      text-align: center;
+      margin-bottom: 24px;
+   }
+
+   &__text {
+
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+   }
+
+
+   &__content-w {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+   }
+
+   &__content {
+      max-width: 472px;
+      width: 100%;
+   }
+}
+
+.title {
+   font-family: 'Inter', sans-serif;
+   font-weight: 400;
+   font-size: 72px;
+   line-height: 88%;
+   letter-spacing: -0.02em;
+   color: #FFFFFF;
+}
