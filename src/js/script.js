@@ -10,3 +10,14 @@ $(document).ready(function() {
      
    });
 });
+
+// активный checkbox
+const checkboxNode = document.querySelectorAll('.checkbox')
+checkboxNode.forEach(function(elem){
+   elem.addEventListener('click', function(){
+      checkboxNode.forEach(function (elem){
+         elem.classList.remove('checkbox--js-active')
+      })
+      this.classList.add('checkbox--js-active')
+   })
+})
