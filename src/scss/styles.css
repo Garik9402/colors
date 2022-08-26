@@ -316,10 +316,46 @@
   width: 100%;
   padding: 0 15px;
   margin: 0 auto;
-}
-.products__menu {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+.products__items {
+  max-width: 1360px;
+  width: 100%;
+}
+.products__header {
+  max-width: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.products__count {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1F2020;
+}
+.products__select {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.products__select-name {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1F2020;
+  margin-right: 5px;
+}
+.checkbox-w {
+  width: 170px;
 }
 
 .checkbox {
@@ -337,8 +373,6 @@
 }
 
 .lable {
-  margin-bottom: 10px;
-  cursor: pointer;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -348,6 +382,8 @@
   color: #1F2020;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .custom-checkbox {
