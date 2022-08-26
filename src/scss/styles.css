@@ -354,6 +354,74 @@
   color: #1F2020;
   margin-right: 5px;
 }
+.products__content {
+  max-width: inherit;
+  width: inherit;
+}
+.products__top {
+  display: flex;
+}
+.products__middle {
+  display: flex;
+}
+.products__bottom {
+  display: flex;
+}
+
+.product {
+  max-width: 278px;
+  width: 100%;
+  height: 378px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product:hover .product__add {
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.product__img {
+  max-width: 100%;
+  height: auto;
+}
+.product__description {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: 0.02em;
+  color: #1F2020;
+}
+.product__items-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product__price {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: #1F2020;
+}
+.product__add {
+  width: 80px;
+  height: 32px;
+  background: #7BB899;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.footer {
+  width: 100%;
+  height: 640px;
+  background-color: #000000;
+}
+
 .checkbox-w {
   width: 170px;
 }
