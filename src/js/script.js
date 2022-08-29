@@ -39,10 +39,6 @@ addProducts()
  const basketPopupNode = document.querySelector('.basket-popup')
  const basketNode = document.querySelector('.header__basket')
  const basketBodyNode = document.querySelector('.basket-popup__body')
-
- basketNode.addEventListener('click', function() {
-
-      })
       window.addEventListener('click', function(e) {
              if (basketNode.contains(e.target)|| basketBodyNode.contains(e.target)) {
                basketPopupNode.classList.add('basket-popup--js-open')
