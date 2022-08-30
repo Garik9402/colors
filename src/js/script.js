@@ -25,26 +25,39 @@ checkboxNode.forEach(function(elem){
 const countProductsNode = document.querySelector('.header__basket-count')
 const proguctsAdd = document.querySelectorAll('.product__add')
  const productsNode = document.querySelectorAll('.product')
-let count = 0;
+ const basketProductNode = document.querySelectorAll('.basket-popup__product')
+const amoutProductsNode = document.querySelectorAll('.basket-popup__product-amout')
+ let count = 0;
 const addProducts = () => {
    proguctsAdd.forEach(function(e){
     e.addEventListener('click', function(){
+      let index = this.dataset.id
          count++
          countProductsNode.innerHTML = count
+         basketProductNode.forEach(function(elem){
+         basketProductNode[index].classList.add('basket-popup__product--js-add')
+         })
+
    })
    })
 }
 addProducts()
-// открытие модальных окон 'корзина, фильтр'
+
+// открытие и закрыьте корзины
  const basketPopupNode = document.querySelector('.basket-popup')
  const basketNode = document.querySelector('.header__basket')
  const basketBodyNode = document.querySelector('.basket-popup__body')
-      window.addEventListener('click', function(e) {
-             if (basketNode.contains(e.target)|| basketBodyNode.contains(e.target)) {
+const closeBasketNode = document.querySelector('.basket-popup__close')
+ window.addEventListener('click', function(e) {
+             if (basketNode.contains(e.target)||(basketBodyNode.contains(e.target))) {
                basketPopupNode.classList.add('basket-popup--js-open')
                document.body.style.overflow='hidden'
-             } else {
+             }else {
                 basketPopupNode.classList.remove('basket-popup--js-open')
                 document.body.style.overflow='visible'
                }
+          
      });
+    
+
+   
