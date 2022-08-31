@@ -181,13 +181,42 @@
                <div class="products__items">
                   <div class="products__header">
                      <p class="products__count">412 товаров</p>
-                     <div class="products__select">
-                        <a href="#popup-filter" class="products__select-name">Сначала дорогие
+                     <div class="products__filter filter">
+                        <a id="filter-popap" href="#popup-filter" class="filter__link">
+                           <span class="filter__name">Сначала дорогие</span>
                            <svg width="10" height="11" viewBox="0 0 10 11" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path d="M5 7.5L8.4641 3L1.5359 3L5 7.5Z" fill="#202020" />
                            </svg>
                         </a>
+                        <div class="filter-popup">
+                           <div class="-filter-popup__body">
+                              <div class="filter-popup__inner">
+                                 <div class="filter-popup__menu">
+                                    <nav class=" filter-popup__nav">
+                                       <ul class=" filter-popup__nav-list">
+                                          <li class="filter-popup__nav-item">
+                                             <a href="#filter-popap" class="filter-popup__nav-item-link">Сначала
+                                                дорогие</a>
+                                          </li>
+                                          <li class="filter-popup__nav-item">
+                                             <a href="#filter-popap" class="filter-popup__nav-item-link">Сначала
+                                                недорогие</a>
+                                          </li>
+                                          <li class="filter-popup__nav-item">
+                                             <a href="#filter-popap" class="filter-popup__nav-item-link">Сначала
+                                                популярные</a>
+                                          </li>
+                                          <li class="filter-popup__nav-item">
+                                             <a href="#filter-popap" class="filter-popup__nav-item-link">Сначала
+                                                новые</a>
+                                          </li>
+                                       </ul>
+                                    </nav>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                      </div>
                   </div>
                   <div class="products__content">
@@ -440,10 +469,9 @@
                   </div>
                </div>
             </div>
-   </div>
-   </section>
-   </main>
-   <footer class="footer"></footer>
+         </section>
+      </main>
+      <footer class="footer"></footer>
    </div>
    <div id="basket-popup" class="basket-popup">
       <div class="basket-popup__body">
@@ -852,28 +880,6 @@
       </div>
    </div>
    <div id="popup-filter" class="popup-filter">
-      <div class="popup-filter__body">
-         <div class="popup-filter__inner">
-            <div class="popup-filter__menu">
-               <nav class="popup-filter__nav">
-                  <ul class="popup-filter__nav-list">
-                     <li class="popup-filter__nav-item">
-                        <a href="#" class="popup-filter__nav-item-link">Сначала дорогие</a>
-                     </li>
-                     <li class="popup-filter__nav-item">
-                        <a href="#" class="popup-filter__nav-item-link">Сначала недорогие</a>
-                     </li>
-                     <li class="popup-filter__nav-item">
-                        <a href="#" class="popup-filter__nav-item-link">Сначала популярные</a>
-                     </li>
-                     <li class="popup-filter__nav-item">
-                        <a href="#" class="popup-filter__nav-item-link">Сначала новые</a>
-                     </li>
-                  </ul>
-               </nav>
-            </div>
-         </div>
-      </div>
    </div>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="js/slick.min.js"></script>

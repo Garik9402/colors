@@ -1,3 +1,4 @@
+
  // настройки слайдера
 $(document).ready(function() {
    $(".slider").slick({
@@ -21,23 +22,22 @@ checkboxNode.forEach(function(elem){
       this.classList.add('checkbox--js-active')
    })
 })
-//добавление товара в корзину + 'количество товара в корзине'
+// добавление товара в корзину + 'количество товара в корзине'
 const countProductsNode = document.querySelector('.header__basket-count')
 const proguctsAdd = document.querySelectorAll('.product__add')
  const productsNode = document.querySelectorAll('.product')
  const basketProductNode = document.querySelectorAll('.basket-popup__product')
 const amoutProductsNode = document.querySelectorAll('.basket-popup__product-amout')
- let count = 0;
+let count = 0;
 const addProducts = () => {
    proguctsAdd.forEach(function(e){
     e.addEventListener('click', function(){
       let index = this.dataset.id
-         count++
-         countProductsNode.innerHTML = count
+      count++
          basketProductNode.forEach(function(elem){
          basketProductNode[index].classList.add('basket-popup__product--js-add')
-         })
-
+      })
+             
    })
    })
 }
@@ -58,6 +58,30 @@ const closeBasketNode = document.querySelector('.basket-popup__close')
                }
           
      });
-    
-
-   
+    // открытие и закрыьте фильтра
+    const filterNode = document.querySelector('.filter')
+    const filterPopupNode = document.querySelector('.filter-popup')
+     const opacityContent = document.querySelector('.popup-filter')
+     window.addEventListener('click', (e) => {
+      if (filterNode.contains(e.target)) {
+   filterPopupNode.classList.toggle('filter-popup--js-toggle')
+        opacityContent.classList.toggle('popup-filter--js-active')
+      }else {
+         filterPopupNode.classList.remove('filter-popup--js-toggle')
+         opacityContent.classList.remove('popup-filter--js-active')
+      }
+      })
+     
+     
+      const filterItemLink = document.querySelectorAll('.filter-popup__nav-item-link')
+        const filterValue = document.querySelector('.filter__name')  
+      filterItemLink.forEach(function(e) {
+             e.addEventListener('click', function() {
+               filterValue.innerText = this.innerText
+               filterItemLink.forEach(function(e){
+               e.classList.remove('filter-popup__nav-item-link--active')
+               })
+               e.classList.add('filter-popup__nav-item-link--active')
+             })
+         
+            })

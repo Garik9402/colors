@@ -6,6 +6,7 @@
 .wrapper-content {
    position: relative;
    overflow: hidden;
+
 }
 
 .header {
@@ -62,6 +63,11 @@
          transition: all 0.3s ease;
       }
 
+
+      @include mq (xxl) {
+         font-size: calc(10px + (14 - 10) * ((100vw - 1250px) / (1500 - 1250)));
+      }
+
    }
 
    &__contacts {
@@ -70,9 +76,11 @@
    }
 
    &__phone-w {
+      min-width: 177px;
       display: flex;
       flex-direction: column;
       margin-right: 118px;
+      padding: 0 10px;
    }
 
    &__phone {
@@ -360,11 +368,10 @@
       justify-content: space-between;
    }
 
-
-
    &__items {
-      max-width: 1490px;
+      max-width: 1520px;
       width: 100%;
+      padding: 0 15px
    }
 
    &__header {
@@ -385,25 +392,14 @@
       color: #1F2020;
    }
 
-   &__select {
+   &__filter {
       display: flex;
+      flex-direction: column;
       align-items: center;
       cursor: pointer;
+
+
    }
-
-   &__select-name {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 15px;
-      text-align: right;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #1F2020;
-      margin-right: 5px;
-   }
-
-
 
    &__content {
       max-width: inherit;
@@ -424,6 +420,99 @@
    &__bottom {
       display: flex;
       justify-content: space-between;
+   }
+}
+
+.filter {
+   position: relative;
+
+   &__link {
+      text-decoration: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+   }
+
+   &__name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: right;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #1F2020;
+      margin-right: 5px;
+
+   }
+}
+
+.filter-popup {
+   width: 280px;
+   position: absolute;
+   z-index: 50;
+   right: 0px;
+   height: 0;
+   min-height: 0;
+   opacity: 0;
+   visibility: hidden;
+
+   &--js-toggle {
+      height: auto;
+      min-height: 20px;
+      opacity: 1;
+      visibility: visible;
+   }
+
+   &__body {
+      width: 280px;
+      right: 10px;
+      z-index: 40;
+
+      &--js-toggle {}
+
+   }
+
+   &__inner {}
+
+   &__menu {}
+
+   &__nav {}
+
+   &__nav-list {
+      width: 100%;
+      background-color: #FFFFFF;
+   }
+
+   &__nav-item {
+      max-width: 280px;
+      width: 100%;
+      height: 48px;
+      list-style: none;
+
+
+      &:hover {}
+   }
+
+   &__nav-item-link {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #1F2020;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      padding: 17px 90px 17px 23px;
+
+      &--active {
+         background-color: #7BB899;
+         transition: all 0.3s ease;
+      }
+
    }
 }
 
@@ -491,7 +580,7 @@
 }
 
 .checkbox-w {
-   width: 170px;
+   min-width: 170px;
 }
 
 
@@ -667,6 +756,7 @@
       opacity: 0.4;
       cursor: pointer;
 
+
    }
 
    &__products {}
@@ -807,7 +897,6 @@
    }
 
    &__button-name {
-
       font-family: 'Inter', sans-serif;
       font-weight: 500;
       font-size: 12px;
@@ -825,64 +914,17 @@
    width: 100%;
    height: 100%;
    background: rgba(0, 0, 0, 0.7);
+   left: 0;
    top: 0;
-   right: 0;
-   opacity: 0;
+   z-index: 29;
    visibility: hidden;
-   overflow-y: auto;
-   overflow-x: hidden;
-   z-index: 20;
+   opacity: 0;
 
-   &:target {
+   &--js-active {
       opacity: 1;
       visibility: visible;
    }
 
-   &__body {
-      position: absolute;
-      max-width: 280px;
-      width: 100%;
-      right: 0;
-      top: 0.5%;
-   }
-
-   &__inner {}
-
-   &__menu {}
-
-   &__nav {}
-
-   &__nav-list {
-      max-width: 280px;
-      width: 100%;
-      background-color: #FFFFFF;
-   }
-
-   &__nav-item {
-      max-width: 280px;
-      width: 100%;
-      height: 48px;
-      list-style: none;
-
-
-      &:hover {
-         background-color: #7BB899;
-         transition: all 0.3s ease;
-      }
-   }
-
-   &__nav-item-link {
-      display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 15px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #1F2020;
-      text-decoration: none;
-      width: 100%;
-      height: 100%;
-      padding: 16px 90px 16px 24px;
-   }
 }
+
+.product {}
