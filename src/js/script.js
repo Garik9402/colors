@@ -138,7 +138,6 @@ const productBasketStatus = () => {
    const countBasketProductsNode = document.querySelector('.basket-popup__amount-products')
    countProductsNode.innerText = productsNode.children.length
    countBasketProductsNode.innerText = (productsNode.children.length + ' товара')
-   console.log(productsNode.children.length)
 }
 // удаление товара из корзины
 window.addEventListener('click', (event) => {
