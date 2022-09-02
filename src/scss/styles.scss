@@ -766,7 +766,6 @@
       display: flex;
       align-items: center;
       padding: 12px 0px;
-      display: none;
 
       &::after {
          content: '';
@@ -779,12 +778,13 @@
          right: 0;
       }
 
-      &--js-add {
-         display: flex;
+      &--js-remove {
+         display: none;
       }
+
    }
 
-   &__progucts-img {
+   &__product-img {
       max-width: 96px;
       width: 100%;
       height: 96px;
@@ -925,6 +925,10 @@
       visibility: visible;
    }
 
+}
+
+svg {
+   pointer-events: none;
 }
 
 .product {}

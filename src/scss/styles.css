@@ -662,7 +662,6 @@
   display: flex;
   align-items: center;
   padding: 12px 0px;
-  display: none;
 }
 .basket-popup__product::after {
   content: "";
@@ -674,10 +673,10 @@
   bottom: 0;
   right: 0;
 }
-.basket-popup__product--js-add {
-  display: flex;
+.basket-popup__product--js-remove {
+  display: none;
 }
-.basket-popup__progucts-img {
+.basket-popup__product-img {
   max-width: 96px;
   width: 100%;
   height: 96px;
@@ -797,4 +796,8 @@
 .popup-filter--js-active {
   opacity: 1;
   visibility: visible;
+}
+
+svg {
+  pointer-events: none;
 }/*# sourceMappingURL=styles.css.map */
