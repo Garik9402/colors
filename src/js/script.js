@@ -14,12 +14,18 @@ $(document).ready(function () {
 
 // активный checkbox
 const checkboxNode = document.querySelectorAll('.checkbox')
+const contentProducts = document.querySelectorAll('.products__content')
 checkboxNode.forEach(function (elem) {
    elem.addEventListener('click', function () {
+      let index = this.dataset.id
       checkboxNode.forEach(function (elem) {
          elem.classList.remove('checkbox--js-active')
       })
       this.classList.add('checkbox--js-active')
+      contentProducts.forEach(function (e) {
+         e.classList.remove('products__content--js-visible')
+      })
+      contentProducts[index].classList.add('products__content--js-visible')
    })
 })
 // добавление товара в корзину + 'количество товара в корзине'
@@ -81,14 +87,21 @@ const basketNode = document.querySelector('.header__basket')
 const basketBodyNode = document.querySelector('.basket-popup__body')
 const closeBasketNode = document.querySelector('.basket-popup__close')
 window.addEventListener('click', function (e) {
-   if (basketNode.contains(e.target) || (basketBodyNode.contains(e.target))) {
+   if (basketNode.contains(e.target)) {
       basketPopupNode.classList.add('basket-popup--js-open')
       document.body.style.overflow = 'hidden'
-   } else {
+   } else if (closeBasketNode.contains(e.target)) {
       basketPopupNode.classList.remove('basket-popup--js-open')
       document.body.style.overflow = 'visible'
    }
-
+   else if (basketBodyNode.contains(e.target)) {
+      basketPopupNode.classList.add('basket-popup--js-open')
+      document.body.style.overflow = 'hidden'
+   }
+   else {
+      basketPopupNode.classList.remove('basket-popup--js-open')
+      document.body.style.overflow = 'visible'
+   }
 });
 
 //увеличение и уменьшение товара в корзине
@@ -126,7 +139,7 @@ function calc() {
 
 
    })
-   totalPriceEl.innerText = totalPrice + '₽'
+   totalPriceEl.innerText = spaceDigits(totalPrice) + '₽'
 
 }
 
@@ -171,13 +184,23 @@ clearProductsBsket()
 const filterNode = document.querySelector('.filter')
 const filterPopupNode = document.querySelector('.filter-popup')
 const opacityContent = document.querySelector('.popup-filter')
+const filterPopupMenu = document.querySelector('.filter-popup__menu')
 window.addEventListener('click', (e) => {
    if (filterNode.contains(e.target)) {
       filterPopupNode.classList.toggle('filter-popup--js-toggle')
       opacityContent.classList.toggle('popup-filter--js-active')
-   } else {
+      document.body.style.overflow = 'hidden'
+
+      if (filterNode.contains(e.target) && (filterPopupNode.contains(e.target))) {
+         document.body.style.overflow = 'visible'
+      }
+   }
+
+
+   else {
       filterPopupNode.classList.remove('filter-popup--js-toggle')
       opacityContent.classList.remove('popup-filter--js-active')
+
    }
 })
 
@@ -194,3 +217,7 @@ filterItemLink.forEach(function (e) {
    })
 
 })
+function spaceDigits(number) {
+   return number.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+}
+

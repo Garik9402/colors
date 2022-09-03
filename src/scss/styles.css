@@ -361,16 +361,12 @@
 .products__content {
   max-width: inherit;
   width: inherit;
+  display: none;
 }
-.products__top {
-  display: flex;
-  justify-content: space-between;
+.products__content--js-visible {
+  display: block;
 }
-.products__middle {
-  display: flex;
-  justify-content: space-between;
-}
-.products__bottom {
+.products__row {
   display: flex;
   justify-content: space-between;
 }
@@ -399,7 +395,7 @@
 .filter-popup {
   width: 280px;
   position: absolute;
-  z-index: 50;
+  z-index: 90;
   right: 0px;
   height: 0;
   min-height: 0;
@@ -415,7 +411,6 @@
 .filter-popup__body {
   width: 280px;
   right: 10px;
-  z-index: 40;
 }
 .filter-popup__nav-list {
   width: 100%;
@@ -449,7 +444,7 @@
 .product {
   max-width: 278px;
   width: 100%;
-  height: 378px;
+  max-height: 378px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -537,10 +532,10 @@
   display: inline-block;
   width: 36px;
   height: 22px;
-  background-color: transparent;
   border-radius: 40px;
   vertical-align: sub;
   margin-right: 12px;
+  background: #F2F2F2;
 }
 .custom-checkbox::before {
   content: "";
@@ -578,7 +573,6 @@
 .basket-popup__body {
   position: absolute;
   max-width: 600px;
-  height: 100%;
   width: 100%;
   padding: 32px 40px 40px 40px;
   top: 0;
@@ -586,9 +580,8 @@
   background: #FFFFFF;
 }
 .basket-popup__inner {
-  max-width: 520px;
   width: 100%;
-  min-height: 940px;
+  height: 940px;
   margin: 0 auto;
   z-index: 20;
   display: flex;
@@ -683,9 +676,9 @@
   margin-right: 8px;
 }
 .basket-popup__product-content {
-  max-width: 165px;
+  max-width: 220px;
   width: 100%;
-  margin-right: 62px;
+  margin-right: 50px;
 }
 .basket-popup__product-description {
   font-family: "Inter", sans-serif;
@@ -789,7 +782,7 @@
   background: rgba(0, 0, 0, 0.7);
   left: 0;
   top: 0;
-  z-index: 29;
+  z-index: 60;
   visibility: hidden;
   opacity: 0;
 }
