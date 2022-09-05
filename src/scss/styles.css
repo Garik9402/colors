@@ -70,10 +70,32 @@
   align-items: center;
   justify-content: space-between;
 }
+@media only screen and (max-width: 992px) {
+  .header__items-left-w {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .header__items-left-w {
+    max-width: none;
+    width: 0;
+  }
+}
 .header__logo-link {
+  display: block;
   height: 26px;
 }
+.header__menu {
+  padding: 0 15px;
+}
+@media only screen and (max-width: 992px) {
+  .header__menu {
+    display: none;
+  }
+}
 .header__nav-list {
+  min-width: 510px;
+  width: 100%;
   display: flex;
   list-style: none;
 }
@@ -96,7 +118,7 @@
 }
 @media only screen and (max-width: 1498px) {
   .header__nav-item-link {
-    font-size: calc(10px + 4 * (100vw - 1250px) / 250);
+    font-size: calc(12px + 2 * (100vw - 992px) / 508);
   }
 }
 .header__contacts {
@@ -110,6 +132,16 @@
   margin-right: 118px;
   padding: 0 10px;
 }
+@media only screen and (max-width: 1498px) {
+  .header__phone-w {
+    margin-right: calc(20px + 98 * (100vw - 1100px) / 400);
+  }
+}
+@media only screen and (max-width: 992px) {
+  .header__phone-w {
+    display: none;
+  }
+}
 .header__phone {
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -117,6 +149,11 @@
   line-height: 100%;
   color: #1F2020;
   text-decoration: none;
+}
+@media only screen and (max-width: 1498px) {
+  .header__phone {
+    font-size: calc(14px + 2 * (100vw - 992px) / 508);
+  }
 }
 .header__callback {
   font-family: "Inter", sans-serif;
@@ -132,10 +169,20 @@
   align-items: center;
   height: 22px;
 }
+@media only screen and (max-width: 992px) {
+  .header__user-items {
+    display: none;
+  }
+}
 .header__icon {
   margin-right: 26px;
   width: 22px;
   height: 22px;
+}
+@media only screen and (max-width: 1498px) {
+  .header__icon {
+    margin-right: calc(14px + 12 * (100vw - 800px) / 700);
+  }
 }
 .header__basket {
   display: inline-block;
@@ -165,6 +212,76 @@
 .logo:hover path {
   fill: #7BB899;
   transition: all 0.3s ease;
+}
+@media only screen and (max-width: 1498px) {
+  .logo {
+    max-width: calc(110px + 21 * (100vw - 992px) / 508);
+  }
+}
+@media only screen and (max-width: 992px) {
+  .logo {
+    max-width: calc(200px + 90 * (100vw - 568px) / 424);
+  }
+}
+
+.burger {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 992px) {
+  .burger {
+    display: block;
+  }
+}
+@media only screen and (max-width: 366px) {
+  .burger {
+    width: 26px;
+    height: 22px;
+  }
+}
+.burger::before, .burger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #1F2020;
+}
+.burger::before {
+  top: 1px;
+  left: 0;
+}
+.burger::after {
+  bottom: 0;
+  left: 0;
+}
+.burger__line-center {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #1F2020;
+  top: 50%;
+  left: 0;
+}
+.burger--js-active::before {
+  transform: rotate(-315deg);
+  top: 48%;
+  transition: all 0.2s linear;
+}
+.burger--js-active::after {
+  transform: rotate(315deg);
+  bottom: 45%;
+  transition: all 0.2s linear;
+}
+@media only screen and (max-width: 366px) {
+  .burger--js-active::after {
+    bottom: 42%;
+  }
+}
+.burger--js-active .burger__line-center {
+  transform: scale(0);
 }
 
 .description {
@@ -278,6 +395,18 @@
 .slider .slick-prev {
   opacity: 0;
 }
+@media only screen and (max-width: 768px) {
+  .slider .slick-prev {
+    opacity: 1;
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    left: -30px;
+    border: none;
+    background: url(../images/arrow-right.svg) no-repeat;
+    transform: rotate(-178deg);
+  }
+}
 .slider .slick-next {
   position: absolute;
   width: 30px;
@@ -285,6 +414,21 @@
   right: -284px;
   border: none;
   background: url(../images/arrow-right.svg) no-repeat;
+}
+@media only screen and (max-width: 1498px) {
+  .slider .slick-next {
+    right: -190px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .slider .slick-next {
+    right: -130px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .slider .slick-next {
+    right: -30px;
+  }
 }
 .slider .slick-dots {
   position: absolute;
@@ -331,10 +475,35 @@
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 992px) {
+  .products__inner {
+    flex-direction: column;
+  }
+}
+.products__filter-checkbox {
+  min-width: 165px;
+}
+@media only screen and (max-width: 992px) {
+  .products__filter-checkbox {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .products__filter-checkbox {
+    display: none;
+  }
+}
 .products__items {
   max-width: 1520px;
   width: 100%;
   padding: 0 15px;
+}
+@media only screen and (max-width: 992px) {
+  .products__items {
+    padding: 0;
+    max-width: 1490px;
+    width: 100%;
+  }
 }
 .products__header {
   max-width: inherit;
@@ -449,12 +618,18 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.product:not(:last-child) {
+  margin-right: 25px;
+}
+.product:nth-child(5) {
+  display: none;
+}
 .product:hover .product__add {
   opacity: 1;
   transition: all 0.3s ease;
 }
 .product__img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 .product__description {
@@ -464,6 +639,11 @@
   line-height: 112%;
   letter-spacing: 0.02em;
   color: #1F2020;
+}
+@media only screen and (max-width: 1498px) {
+  .product__description {
+    font-size: calc(14px + 2 * (100vw - 1250px) / 250);
+  }
 }
 .product__items-bottom {
   display: flex;
@@ -488,15 +668,35 @@
   cursor: pointer;
   opacity: 0;
 }
+@media only screen and (max-width: 992px) {
+  .product__add {
+    opacity: 1;
+    width: 40px;
+    height: 24px;
+    width: 40px;
+    height: 24px;
+    right: 0px;
+    background: #F2F2F2;
+    border-radius: 6px;
+  }
+}
 
 .footer {
   width: 100%;
-  height: 640px;
+  height: 300px;
   background-color: #000000;
 }
 
 .checkbox-w {
   min-width: 170px;
+}
+@media only screen and (max-width: 992px) {
+  .checkbox-w {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
 }
 
 .checkbox {
@@ -536,6 +736,11 @@
   vertical-align: sub;
   margin-right: 12px;
   background: #F2F2F2;
+}
+@media only screen and (max-width: 992px) {
+  .custom-checkbox {
+    margin-right: 5px;
+  }
 }
 .custom-checkbox::before {
   content: "";
