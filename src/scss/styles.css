@@ -286,21 +286,32 @@
 
 .description {
   width: 100%;
-  min-height: 560px;
+  height: 560px;
   background: url(../images/description-back.png) no-repeat;
   background-size: cover;
   background-position: 50%;
   padding: 32px 0px 39px 0px;
 }
+@media only screen and (max-width: 574px) {
+  .description {
+    height: 470px;
+  }
+}
 .description__inner {
   max-width: 1825px;
   width: 100%;
+  height: 100%;
   padding: 0 15px;
   margin: 0 auto;
 }
 .description__header {
   width: 100%;
   margin-bottom: 175px;
+}
+@media only screen and (max-width: 574px) {
+  .description__header {
+    margin-bottom: 100px;
+  }
 }
 .description__nav-list {
   display: flex;
@@ -345,6 +356,11 @@
   letter-spacing: 0.02em;
   color: #FFFFFF;
 }
+@media only screen and (max-width: 574px) {
+  .description__text {
+    font-size: 14px;
+  }
+}
 .description__content-w {
   width: 100%;
   display: flex;
@@ -363,11 +379,17 @@
   letter-spacing: -0.02em;
   color: #FFFFFF;
 }
+@media only screen and (max-width: 574px) {
+  .title {
+    font-size: 50px;
+  }
+}
 
 .slider {
   position: relative;
   width: 472px;
   display: flex;
+  justify-content: center;
   /* Слайдер запущен */
   /* Слайдер с точками */
   /* Лента слайдов */
@@ -378,6 +400,14 @@
   /* Точки (булиты) */
   /* Активная точка */
   /* Элемент точки */
+}
+@media only screen and (max-width: 574px) {
+  .slider {
+    width: 320px;
+  }
+}
+.slider .slick-initialized {
+  display: none;
 }
 .slider .slick-list {
   overflow: hidden;
@@ -435,12 +465,16 @@
   display: flex;
   justify-content: center;
   bottom: -143px;
-  left: 30%;
-  transform: translateX(30%);
+  text-align: center;
   width: 124px;
   height: 32px;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 16px;
+}
+@media only screen and (max-width: 574px) {
+  .slider .slick-dots {
+    bottom: -100px;
+  }
 }
 .slider li {
   list-style: none;
@@ -512,6 +546,35 @@
   justify-content: space-between;
   margin-bottom: 44px;
 }
+.products__filters-checkbox {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1F2020;
+  text-decoration: none;
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .products__filters-checkbox {
+    display: block;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .products__checkbox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .products__custom-checkbox {
+    margin-right: 5px;
+  }
+}
 .products__count {
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -520,6 +583,11 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #1F2020;
+}
+@media only screen and (max-width: 768px) {
+  .products__count {
+    display: none;
+  }
 }
 .products__filter {
   display: flex;
@@ -535,9 +603,32 @@
 .products__content--js-visible {
   display: block;
 }
+@media only screen and (max-width: 768px) {
+  .products__content {
+    display: none;
+  }
+  .products__content--js-visible {
+    display: flex;
+  }
+}
 .products__row {
   display: flex;
-  justify-content: space-between;
+}
+@media only screen and (max-width: 768px) {
+  .products__row {
+    flex-direction: column;
+  }
+  .products__row:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+@media only screen and (max-width: 574px) {
+  .products__row:last-child {
+    display: none;
+  }
+  .products__row:nth-child(2) {
+    margin-right: 0px;
+  }
 }
 
 .filter {
@@ -613,7 +704,6 @@
 .product {
   max-width: 278px;
   width: 100%;
-  max-height: 378px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -621,8 +711,16 @@
 .product:not(:last-child) {
   margin-right: 25px;
 }
-.product:nth-child(5) {
-  display: none;
+@media only screen and (max-width: 768px) {
+  .product:not(:last-child) {
+    margin-top: 15px;
+    margin-right: 0px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .product:nth-child(5) {
+    display: none;
+  }
 }
 .product:hover .product__add {
   opacity: 1;
@@ -631,6 +729,7 @@
 .product__img {
   width: 100%;
   height: auto;
+  margin-bottom: 16px;
 }
 .product__description {
   font-family: "Inter", sans-serif;
@@ -639,11 +738,7 @@
   line-height: 112%;
   letter-spacing: 0.02em;
   color: #1F2020;
-}
-@media only screen and (max-width: 1498px) {
-  .product__description {
-    font-size: calc(14px + 2 * (100vw - 1250px) / 250);
-  }
+  margin-bottom: 24px;
 }
 .product__items-bottom {
   display: flex;
@@ -673,8 +768,6 @@
     opacity: 1;
     width: 40px;
     height: 24px;
-    width: 40px;
-    height: 24px;
     right: 0px;
     background: #F2F2F2;
     border-radius: 6px;
@@ -689,14 +782,6 @@
 
 .checkbox-w {
   min-width: 170px;
-}
-@media only screen and (max-width: 992px) {
-  .checkbox-w {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
 }
 
 .checkbox {
@@ -736,11 +821,6 @@
   vertical-align: sub;
   margin-right: 12px;
   background: #F2F2F2;
-}
-@media only screen and (max-width: 992px) {
-  .custom-checkbox {
-    margin-right: 5px;
-  }
 }
 .custom-checkbox::before {
   content: "";
@@ -994,6 +1074,48 @@
 .popup-filter--js-active {
   opacity: 1;
   visibility: visible;
+}
+
+.filter-products-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: flex-end;
+}
+.filter-products-popup--js-active {
+  opacity: 1;
+  visibility: visible;
+}
+.filter-products-popup__body {
+  position: relative;
+  padding: 54px 24px 114px 24px;
+  width: 100%;
+  height: 318px;
+  background: #FFFFFF;
+  border-radius: 24px 24px 0px 0px;
+}
+.filter-products-popup__body::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 4px;
+  background: #1F2020;
+  opacity: 0.6;
+  border-radius: 40px;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.filter-products-popup__inner {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 svg {

@@ -8,9 +8,13 @@ $(document).ready(function () {
       speed: 1000,
       autoplay: true,
       slidesToScroll: 1,
-
    });
+
 });
+
+
+
+
 
 // активный checkbox
 const checkboxNode = document.querySelectorAll('.checkbox')
@@ -221,3 +225,16 @@ function spaceDigits(number) {
    return number.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 }
 
+// открытие фильра категорий товаров
+const filterCategoryProducts = document.querySelector('.products__filters-checkbox')
+let productsPopapCategory = document.querySelector('.filter-products-popup')
+window.addEventListener('click', (event) => {
+   if (filterCategoryProducts.contains(event.target)) {
+      productsPopapCategory.classList.add("filter-products-popup--js-active")
+      document.body.style.overflow = 'hidden'
+   }
+   else {
+      productsPopapCategory.classList.remove('filter-products-popup--js-active')
+   }
+
+})
