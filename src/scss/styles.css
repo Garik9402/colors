@@ -45,14 +45,76 @@
   box-sizing: border-box;
 }
 
+body--js-toggle {
+  overflow: hidden;
+}
+
+.burger-menu {
+  width: 100%;
+  height: 0;
+  min-height: 0;
+  opacity: 0;
+  background-color: #7BB899;
+  z-index: 92;
+}
+.burger-menu--js-open {
+  position: fixed;
+  height: 100%;
+  opacity: 1;
+  padding-top: 120px;
+  overflow-y: hidden;
+}
+.burger-menu__inner {
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+}
+.burger-menu__header {
+  display: flex;
+}
+.burger-menu__phone {
+  display: flex;
+  flex-direction: column;
+}
+.burger-menu__user-items {
+  display: flex;
+}
+.burger-menu__nav-list {
+  list-style: none;
+}
+.burger-menu__nav-list-item {
+  margin-bottom: 25px;
+}
+.burger-menu__nav-item-link {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 100%;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1F2020;
+  text-decoration: none;
+}
+
 .wrapper-content {
   position: relative;
   overflow: hidden;
 }
 
 .header {
+  position: fixed;
   width: 100%;
   padding: 36px 0px;
+  background-color: #FFFFFF;
+  z-index: 93;
+}
+.header--backg {
+  background-color: bisque;
+}
+@media only screen and (max-width: 992px) {
+  .header {
+    padding: 20px 0px;
+  }
 }
 .header__inner {
   max-width: 1825px;
@@ -142,7 +204,7 @@
     display: none;
   }
 }
-.header__phone {
+.header .phone {
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -151,11 +213,11 @@
   text-decoration: none;
 }
 @media only screen and (max-width: 1498px) {
-  .header__phone {
+  .header .phone {
     font-size: calc(14px + 2 * (100vw - 992px) / 508);
   }
 }
-.header__callback {
+.header .callback {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -174,13 +236,13 @@
     display: none;
   }
 }
-.header__icon {
+.header .icon {
   margin-right: 26px;
   width: 22px;
   height: 22px;
 }
 @media only screen and (max-width: 1498px) {
-  .header__icon {
+  .header .icon {
     margin-right: calc(14px + 12 * (100vw - 800px) / 700);
   }
 }
@@ -221,6 +283,41 @@
 @media only screen and (max-width: 992px) {
   .logo {
     max-width: calc(200px + 90 * (100vw - 568px) / 424);
+  }
+}
+
+.phone {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #1F2020;
+  text-decoration: none;
+}
+@media only screen and (max-width: 1498px) {
+  .phone {
+    font-size: calc(14px + 2 * (100vw - 992px) / 508);
+  }
+}
+
+.callback {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #1F2020;
+  opacity: 0.3;
+  text-decoration: none;
+}
+
+.icon {
+  margin-right: 26px;
+  width: 22px;
+  height: 22px;
+}
+@media only screen and (max-width: 1498px) {
+  .icon {
+    margin-right: calc(14px + 12 * (100vw - 800px) / 700);
   }
 }
 
@@ -272,7 +369,7 @@
 }
 .burger--js-active::after {
   transform: rotate(315deg);
-  bottom: 45%;
+  bottom: 39%;
   transition: all 0.2s linear;
 }
 @media only screen and (max-width: 366px) {
@@ -846,7 +943,7 @@
   visibility: hidden;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 10;
+  z-index: 95;
 }
 .basket-popup--js-open {
   opacity: 1;

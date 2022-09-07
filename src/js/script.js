@@ -238,3 +238,30 @@ window.addEventListener('click', (event) => {
    }
 
 })
+
+//открытие и зкрытие бургер меню
+const burgerNode = document.querySelector('.burger')
+const burgerMenuNode = document.querySelector('.burger-menu')
+window.addEventListener('click', (e) => {
+   if (burgerNode.contains(e.target)) {
+      burgerNode.classList.toggle('burger--js-active')
+      burgerMenuNode.classList.toggle('burger-menu--js-open')
+      if (burgerNode.classList.contains('burger--js-active')) {
+         document.body.style.overflow = 'hidden'
+      }
+   }
+
+
+})
+
+const headerNode = document.querySelector('.header')
+window.addEventListener('scroll', () => {
+   if (window.pageYOffset >= 500) {
+      headerNode.classList.add('header--backg')
+   }
+   else {
+      headerNode.classList.remove('header--backg')
+   }
+
+
+})

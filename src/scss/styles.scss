@@ -2,6 +2,73 @@
 @import "mixin.scss";
 @import "reset.scss";
 
+body {
+   &--js-toggle {
+      overflow: hidden;
+   }
+}
+
+
+.burger-menu {
+   width: 100%;
+   height: 0;
+   min-height: 0;
+   opacity: 0;
+   background-color: #7BB899;
+   z-index: 92;
+
+
+
+   &--js-open {
+      position: fixed;
+      height: 100%;
+      opacity: 1;
+      padding-top: 120px;
+      overflow-y: hidden;
+
+   }
+
+   &__inner {
+      max-width: 560px;
+      width: 100%;
+      margin: 0 auto;
+   }
+
+   &__header {
+      display: flex;
+   }
+
+   &__phone {
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__user-items {
+      display: flex;
+   }
+
+   &__nav {}
+
+   &__nav-list {
+      list-style: none;
+   }
+
+   &__nav-list-item {
+      margin-bottom: 25px;
+   }
+
+   &__nav-item-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 100%;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #1F2020;
+      text-decoration: none;
+   }
+}
+
 
 .wrapper-content {
    position: relative;
@@ -10,8 +77,19 @@
 }
 
 .header {
+   position: fixed;
    width: 100%;
    padding: 36px 0px;
+   background-color: #FFFFFF;
+   z-index: 93;
+
+   &--backg {
+      background-color: bisque;
+   }
+
+   @include mq (xl) {
+      padding: 20px 0px;
+   }
 
    &__inner {
       max-width: 1825px;
@@ -118,7 +196,7 @@
 
    }
 
-   &__phone {
+   .phone {
       font-family: 'Inter', sans-serif;
       font-weight: 500;
       font-size: 16px;
@@ -131,7 +209,7 @@
       }
    }
 
-   &__callback {
+   .callback {
       font-family: 'Inter', sans-serif;
       font-weight: 400;
       font-size: 14px;
@@ -151,7 +229,7 @@
       }
    }
 
-   &__icon {
+   .icon {
       margin-right: 26px;
       width: 22px;
       height: 22px;
@@ -161,11 +239,7 @@
       }
    }
 
-   &__search {}
 
-   &__user {}
-
-   &__heart {}
 
    &__basket {
       display: inline-block;
@@ -213,6 +287,45 @@
    }
 
 }
+
+.phone {
+   font-family: 'Inter', sans-serif;
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 100%;
+   color: #1F2020;
+   text-decoration: none;
+
+   @include mq(xxl) {
+      font-size: calc(14px + (14 - 12) * ((100vw - 992px) / (1500 - 992)));
+   }
+}
+
+.callback {
+   font-family: 'Inter', sans-serif;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 100%;
+   color: #1F2020;
+   opacity: 0.3;
+   text-decoration: none;
+}
+
+.icon {
+   margin-right: 26px;
+   width: 22px;
+   height: 22px;
+
+   @include mq(xxl) {
+      margin-right: calc(14px + (26 - 14) * ((100vw - 800px) / (1500 - 800)));
+   }
+}
+
+.search {}
+
+.user {}
+
+.heart {}
 
 .burger {
    display: none;
@@ -266,7 +379,7 @@
 
    &--js-active::after {
       transform: rotate(315deg);
-      bottom: 45%;
+      bottom: 39%;
       transition: all 0.2s linear;
 
       @include mq (sm) {
@@ -939,7 +1052,7 @@
    visibility: hidden;
    overflow-y: auto;
    overflow-x: hidden;
-   z-index: 10;
+   z-index: 95;
 
    &--js-open {
       opacity: 1;

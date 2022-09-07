@@ -2,5 +2,3 @@ node_modules
 .idea
 .vscode
 package-lock.json
-.gulpfile.js
-.src
